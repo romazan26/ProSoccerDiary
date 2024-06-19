@@ -40,7 +40,7 @@ struct FavoritePlayersView: View {
                     //MARK: - count players
                     ZStack{
                         Circle().foregroundStyle(.grayApp)
-                        Text("5")
+                        Text("\(vm.players.count)")
                             .foregroundStyle(.white)
                             .font(.system(size: 14, weight: .heavy))
                     }.frame(width: 30, height: 30)
@@ -48,22 +48,32 @@ struct FavoritePlayersView: View {
                 
                 Spacer()
                 
-                //MARK: - Players
-                
-                Spacer()
-                
-                //MARK: - Add button
-                HStack{
-                    Spacer()
-                    NavigationLink {
-                        NewPlayerView(vm: vm)
-                    } label: {
-                        CircleButtonView(image: "plus.circle.fill")
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
+                    //MARK: - Players
+                    ScrollView{
+                        if !vm.players.isEmpty {
+                            playerListView(items: vm.players)
+                        }else {
+                            Text("No favorite players").foregroundStyle(.white)
+                        }
                     }
-
-                }.padding()
+                    
+                    //MARK: - Add button
+                    HStack{
+                        Spacer()
+                        NavigationLink {
+                            NewPlayerView(vm: vm)
+                        } label: {
+                            CircleButtonView(image: "plus.circle.fill")
+                        }
+                        
+                    }.padding()
+                }
             }
         }
+        .onAppear(perform: {
+            vm.getPlayers()
+        })
         .navigationBarBackButtonHidden(true)
     }
 }

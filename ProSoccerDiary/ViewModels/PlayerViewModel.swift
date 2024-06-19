@@ -20,6 +20,15 @@ final class PlayerViewModel: ObservableObject {
     @Published var simpleTeam = ""
     @Published var pickerResult: [UIImage] = []
     
+    init(){
+        getPlayers()
+    }
+    
+    //MARK: - Delete
+    func deletePlayer(player: Players){
+        manager.context.delete(player)
+        save()
+    }
     
     //MARK: - Get Players
     func getPlayers(){
@@ -41,7 +50,7 @@ final class PlayerViewModel: ObservableObject {
         if !pickerResult.isEmpty {
             newPlayer.image = pickerResult.first
         }
-        
+        save()
     }
     
     //MARK: - Save data

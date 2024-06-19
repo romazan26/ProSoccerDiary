@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct PlayerCellView: View {
-    let width: CGFloat = 262
-    let height: CGFloat = 331
+    
+    let player: Players
+    var width: CGFloat = 170
+    var height: CGFloat = 215
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
-            Image(.testPlayer)
+            Image(uiImage: player.image ?? .noPhoto)
                 .resizable()
             ZStack {
                 Color.blueApp
@@ -20,15 +22,17 @@ struct PlayerCellView: View {
                     .opacity(0.5)
                     .shadow(color: .blue, radius: 20)
                     .blur(radius: 6.0)
-                Text("Cristiano")
+                Text(player.name ?? "")
                     .padding()
                     .foregroundStyle(.white)
                 .font(.title2)
             }
-        }.frame(width: width, height: height)
+        }
+        .cornerRadius(18)
+        .frame(width: width, height: height)
     }
 }
 
-#Preview {
-    PlayerCellView()
-}
+//#Preview {
+//    PlayerCellView(player: Players())
+//}

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		30173A842C2309B0005C388F /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30173A832C2309B0005C388F /* AddButtonView.swift */; };
+		30173A862C235401005C388F /* playerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30173A852C235401005C388F /* playerListView.swift */; };
+		30173A882C235C67005C388F /* PlayerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30173A872C235C67005C388F /* PlayerInfoView.swift */; };
 		305E814D2C221C9C00B7FE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E814C2C221C9C00B7FE37 /* AppDelegate.swift */; };
 		305E814F2C221C9C00B7FE37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E814E2C221C9C00B7FE37 /* SceneDelegate.swift */; };
 		305E81512C221C9C00B7FE37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81502C221C9C00B7FE37 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		30173A832C2309B0005C388F /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		30173A852C235401005C388F /* playerListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerListView.swift; sourceTree = "<group>"; };
+		30173A872C235C67005C388F /* PlayerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoView.swift; sourceTree = "<group>"; };
 		305E81492C221C9C00B7FE37 /* ProSoccerDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProSoccerDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305E814C2C221C9C00B7FE37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		305E814E2C221C9C00B7FE37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				305E817F2C2304FA00B7FE37 /* NoPhotoView.swift */,
 				305E81812C2304FF00B7FE37 /* PhotoPicker.swift */,
 				30173A832C2309B0005C388F /* AddButtonView.swift */,
+				30173A852C235401005C388F /* playerListView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				305E816A2C22AE9600B7FE37 /* FavoritePlayersView.swift */,
 				305E817D2C23020D00B7FE37 /* NewPlayerView.swift */,
+				30173A872C235C67005C388F /* PlayerInfoView.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -252,6 +258,8 @@
 				305E81752C22B4B700B7FE37 /* Players.swift in Sources */,
 				305E81802C2304FA00B7FE37 /* NoPhotoView.swift in Sources */,
 				305E81732C22B3EF00B7FE37 /* UIImageTransformer.swift in Sources */,
+				30173A882C235C67005C388F /* PlayerInfoView.swift in Sources */,
+				30173A862C235401005C388F /* playerListView.swift in Sources */,
 				305E81842C23060100B7FE37 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
