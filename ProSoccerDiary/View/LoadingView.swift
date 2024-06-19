@@ -43,7 +43,7 @@ struct LoadingView: View {
                     progress += 1
                 }else {
                     timer.invalidate()
-                   // isPresent = true
+                    isPresent = true
                 }
             }
         })

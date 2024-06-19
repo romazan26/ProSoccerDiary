@@ -16,6 +16,13 @@
 		305E81622C221D1200B7FE37 /* FootballTrainingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81612C221D1200B7FE37 /* FootballTrainingsView.swift */; };
 		305E81642C221DCF00B7FE37 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81632C221DCF00B7FE37 /* LoadingView.swift */; };
 		305E81672C221EDC00B7FE37 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81662C221EDC00B7FE37 /* ProgressCircleView.swift */; };
+		305E816B2C22AE9600B7FE37 /* FavoritePlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E816A2C22AE9600B7FE37 /* FavoritePlayersView.swift */; };
+		305E816F2C22B28400B7FE37 /* ProSoccer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 305E816D2C22B28400B7FE37 /* ProSoccer.xcdatamodeld */; };
+		305E81712C22B2EE00B7FE37 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81702C22B2EE00B7FE37 /* CoreDataManager.swift */; };
+		305E81732C22B3EF00B7FE37 /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81722C22B3EF00B7FE37 /* UIImageTransformer.swift */; };
+		305E81752C22B4B700B7FE37 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81742C22B4B700B7FE37 /* Players.swift */; };
+		305E81782C22B61500B7FE37 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81772C22B61500B7FE37 /* PlayerViewModel.swift */; };
+		305E817A2C22BD1000B7FE37 /* PlayerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81792C22BD1000B7FE37 /* PlayerCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		305E81612C221D1200B7FE37 /* FootballTrainingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballTrainingsView.swift; sourceTree = "<group>"; };
 		305E81632C221DCF00B7FE37 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		305E81662C221EDC00B7FE37 /* ProgressCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		305E816A2C22AE9600B7FE37 /* FavoritePlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePlayersView.swift; sourceTree = "<group>"; };
+		305E816E2C22B28400B7FE37 /* ProSoccer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProSoccer.xcdatamodel; sourceTree = "<group>"; };
+		305E81702C22B2EE00B7FE37 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		305E81722C22B3EF00B7FE37 /* UIImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
+		305E81742C22B4B700B7FE37 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		305E81772C22B61500B7FE37 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		305E81792C22BD1000B7FE37 /* PlayerCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,8 @@
 		305E814B2C221C9C00B7FE37 /* ProSoccerDiary */ = {
 			isa = PBXGroup;
 			children = (
+				305E81762C22B60100B7FE37 /* ViewModels */,
+				305E816C2C22B24200B7FE37 /* CoreData */,
 				305E81652C221E5000B7FE37 /* Helpers */,
 				305E81602C221CED00B7FE37 /* View */,
 				305E814C2C221C9C00B7FE37 /* AppDelegate.swift */,
@@ -78,7 +94,8 @@
 		305E81602C221CED00B7FE37 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				305E81612C221D1200B7FE37 /* FootballTrainingsView.swift */,
+				305E81692C22AE6C00B7FE37 /* Trainings */,
+				305E81682C22AE3E00B7FE37 /* Players */,
 				305E81632C221DCF00B7FE37 /* LoadingView.swift */,
 			);
 			path = View;
@@ -88,8 +105,44 @@
 			isa = PBXGroup;
 			children = (
 				305E81662C221EDC00B7FE37 /* ProgressCircleView.swift */,
+				305E81792C22BD1000B7FE37 /* PlayerCellView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		305E81682C22AE3E00B7FE37 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				305E816A2C22AE9600B7FE37 /* FavoritePlayersView.swift */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		305E81692C22AE6C00B7FE37 /* Trainings */ = {
+			isa = PBXGroup;
+			children = (
+				305E81612C221D1200B7FE37 /* FootballTrainingsView.swift */,
+			);
+			path = Trainings;
+			sourceTree = "<group>";
+		};
+		305E816C2C22B24200B7FE37 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				305E816D2C22B28400B7FE37 /* ProSoccer.xcdatamodeld */,
+				305E81702C22B2EE00B7FE37 /* CoreDataManager.swift */,
+				305E81722C22B3EF00B7FE37 /* UIImageTransformer.swift */,
+				305E81742C22B4B700B7FE37 /* Players.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		305E81762C22B60100B7FE37 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				305E81772C22B61500B7FE37 /* PlayerViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,8 +220,15 @@
 				305E81672C221EDC00B7FE37 /* ProgressCircleView.swift in Sources */,
 				305E814D2C221C9C00B7FE37 /* AppDelegate.swift in Sources */,
 				305E814F2C221C9C00B7FE37 /* SceneDelegate.swift in Sources */,
+				305E817A2C22BD1000B7FE37 /* PlayerCellView.swift in Sources */,
+				305E816B2C22AE9600B7FE37 /* FavoritePlayersView.swift in Sources */,
 				305E81642C221DCF00B7FE37 /* LoadingView.swift in Sources */,
+				305E81712C22B2EE00B7FE37 /* CoreDataManager.swift in Sources */,
+				305E816F2C22B28400B7FE37 /* ProSoccer.xcdatamodeld in Sources */,
 				305E81622C221D1200B7FE37 /* FootballTrainingsView.swift in Sources */,
+				305E81782C22B61500B7FE37 /* PlayerViewModel.swift in Sources */,
+				305E81752C22B4B700B7FE37 /* Players.swift in Sources */,
+				305E81732C22B3EF00B7FE37 /* UIImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +461,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		305E816D2C22B28400B7FE37 /* ProSoccer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				305E816E2C22B28400B7FE37 /* ProSoccer.xcdatamodel */,
+			);
+			currentVersion = 305E816E2C22B28400B7FE37 /* ProSoccer.xcdatamodel */;
+			name = ProSoccer.xcdatamodeld;
+			path = /Users/roman/Downloads/XcodeProgramm/ProSoccerDiary/ProSoccerDiary/CoreData/ProSoccer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 305E81412C221C9C00B7FE37 /* Project object */;
 }
