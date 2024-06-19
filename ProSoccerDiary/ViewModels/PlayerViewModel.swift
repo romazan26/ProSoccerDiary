@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 final class PlayerViewModel: ObservableObject {
     
@@ -15,8 +16,9 @@ final class PlayerViewModel: ObservableObject {
     @Published var players: [Players] = []
     
     @Published var simpleName = ""
-    @Published var simpleAge = 0
+    @Published var simpleAge = ""
     @Published var simpleTeam = ""
+    @Published var pickerResult: [UIImage] = []
     
     
     //MARK: - Get Players
@@ -34,8 +36,12 @@ final class PlayerViewModel: ObservableObject {
     func addPlayer(){
         let newPlayer = Players(context: manager.context)
         newPlayer.name = simpleName
-        newPlayer.age = Int16(simpleAge)
         newPlayer.team = simpleTeam
+        newPlayer.age = simpleAge
+        if !pickerResult.isEmpty {
+            newPlayer.image = pickerResult.first
+        }
+        
     }
     
     //MARK: - Save data

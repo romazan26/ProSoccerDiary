@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FavoritePlayersView: View {
+    
+    @StateObject var vm = PlayerViewModel()
+    
     @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
@@ -41,13 +44,27 @@ struct FavoritePlayersView: View {
                             .foregroundStyle(.white)
                             .font(.system(size: 14, weight: .heavy))
                     }.frame(width: 30, height: 30)
-                }
+                }.padding()
                 
                 Spacer()
                 
                 //MARK: - Players
+                
+                Spacer()
+                
+                //MARK: - Add button
+                HStack{
+                    Spacer()
+                    NavigationLink {
+                        NewPlayerView(vm: vm)
+                    } label: {
+                        CircleButtonView(image: "plus.circle.fill")
+                    }
+
+                }.padding()
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

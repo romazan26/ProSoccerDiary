@@ -18,7 +18,7 @@ public class Players: NSManagedObject {
         return NSFetchRequest<Players>(entityName: "Players")
     }
 
-    @NSManaged public var age: Int16
+    @NSManaged public var age: String?
     @NSManaged public var image: UIImage?
     @NSManaged public var name: String?
     @NSManaged public var team: String?
