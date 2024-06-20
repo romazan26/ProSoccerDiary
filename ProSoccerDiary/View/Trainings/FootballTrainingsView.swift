@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FootballTrainingsView: View {
+    @StateObject var vm = TrainingsViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -30,8 +31,13 @@ struct FootballTrainingsView: View {
                         }
 
                     }
-                    Text("Favorites")
-                        .foregroundStyle(.gray)
+                    //MARK: - Favorites training
+                    VStack {
+                        Text("Favorites")
+                            .foregroundStyle(.gray)
+                    }
+                    
+                    //MARK: - All training
                     Text("All")
                         .foregroundStyle(.gray)
                     Spacer()
@@ -47,7 +53,7 @@ struct FootballTrainingsView: View {
                         
                         //MARK: - Add Training
                         NavigationLink {
-                            
+                            NewTrainingView(vm: vm)
                         } label: {
                             CircleButtonView(image: "plus.circle.fill")
                         }
