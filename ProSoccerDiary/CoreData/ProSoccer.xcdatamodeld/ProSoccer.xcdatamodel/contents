@@ -6,4 +6,24 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="team" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Stage1" representedClassName="Stage1" syncable="YES" codeGenerationType="class">
+        <attribute name="titleTask" optional="YES" attributeType="String"/>
+        <relationship name="trainig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="stage1" inverseEntity="Training"/>
+    </entity>
+    <entity name="Stage2" representedClassName="Stage2" syncable="YES" codeGenerationType="class">
+        <attribute name="titleTask" optional="YES" attributeType="String"/>
+        <relationship name="trainig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="stage2" inverseEntity="Training"/>
+    </entity>
+    <entity name="Stage3" representedClassName="Stage3" syncable="YES" codeGenerationType="class">
+        <attribute name="titleTask" optional="YES" attributeType="String"/>
+        <relationship name="trainig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="stage3" inverseEntity="Training"/>
+    </entity>
+    <entity name="Training" representedClassName="Training" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="like" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="stage1" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage1" inverseName="trainig" inverseEntity="Stage1"/>
+        <relationship name="stage2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage2" inverseName="trainig" inverseEntity="Stage2"/>
+        <relationship name="stage3" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage3" inverseName="trainig" inverseEntity="Stage3"/>
+    </entity>
 </model>
