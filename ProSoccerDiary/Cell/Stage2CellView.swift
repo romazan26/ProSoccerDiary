@@ -1,20 +1,20 @@
 //
-//  TrainingCellView.swift
+//  Stage2CellView.swift
 //  ProSoccerDiary
 //
-//  Created by Роман on 20.06.2024.
+//  Created by Роман on 22.06.2024.
 //
 
 import SwiftUI
 
-struct StageCellView: View {
+struct Stage2CellView: View {
     let training: Training
     var body: some View {
         ZStack {
             Color.grayApp.ignoresSafeArea()
             VStack(alignment: .leading) {
-                if let stage1 = training.stage1?.allObjects as? [Stage1]{
-                    ForEach(stage1) { task in
+                if let stage2 = training.stage2?.allObjects as? [Stage2]{
+                    ForEach(stage2) { task in
                     HStack {
                         Circle()
                             .foregroundStyle(.blueApp)
@@ -33,6 +33,6 @@ struct StageCellView: View {
     }
 }
 
-//#Preview {
-//    StageCellView(training: Training())
-//}
+#Preview {
+    Stage2CellView(training: Training())
+}

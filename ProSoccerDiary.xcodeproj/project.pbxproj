@@ -37,6 +37,10 @@
 		305E81802C2304FA00B7FE37 /* NoPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E817F2C2304FA00B7FE37 /* NoPhotoView.swift */; };
 		305E81822C2304FF00B7FE37 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81812C2304FF00B7FE37 /* PhotoPicker.swift */; };
 		305E81842C23060100B7FE37 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E81832C23060000B7FE37 /* CustomTextFieldView.swift */; };
+		3096ED5C2C273E9400EEEF75 /* TitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED5B2C273E9400EEEF75 /* TitleTextField.swift */; };
+		3096ED5E2C2751C900EEEF75 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED5D2C2751C900EEEF75 /* StageView.swift */; };
+		3096ED602C276EC500EEEF75 /* Stage2CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED5F2C276EC500EEEF75 /* Stage2CellView.swift */; };
+		3096ED622C276F3600EEEF75 /* Stage3CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED612C276F3600EEEF75 /* Stage3CellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		305E817F2C2304FA00B7FE37 /* NoPhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoPhotoView.swift; sourceTree = "<group>"; };
 		305E81812C2304FF00B7FE37 /* PhotoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		305E81832C23060000B7FE37 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		3096ED5B2C273E9400EEEF75 /* TitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTextField.swift; sourceTree = "<group>"; };
+		3096ED5D2C2751C900EEEF75 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
+		3096ED5F2C276EC500EEEF75 /* Stage2CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2CellView.swift; sourceTree = "<group>"; };
+		3096ED612C276F3600EEEF75 /* Stage3CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3CellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,8 @@
 				30173A8C2C2460C6005C388F /* StageCellView.swift */,
 				30173A8E2C246365005C388F /* TrainingCellView.swift */,
 				30173A942C24B875005C388F /* TextFieldGroupView.swift */,
+				3096ED5F2C276EC500EEEF75 /* Stage2CellView.swift */,
+				3096ED612C276F3600EEEF75 /* Stage3CellView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 				305E81812C2304FF00B7FE37 /* PhotoPicker.swift */,
 				30173A832C2309B0005C388F /* AddButtonView.swift */,
 				30173A902C24640A005C388F /* DateTrainingView.swift */,
+				3096ED5B2C273E9400EEEF75 /* TitleTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 			children = (
 				305E81612C221D1200B7FE37 /* FootballTrainingsView.swift */,
 				30173A922C246715005C388F /* NewTrainingView.swift */,
+				3096ED5D2C2751C900EEEF75 /* StageView.swift */,
 			);
 			path = Trainings;
 			sourceTree = "<group>";
@@ -269,6 +281,7 @@
 				305E81512C221C9C00B7FE37 /* ViewController.swift in Sources */,
 				305E81672C221EDC00B7FE37 /* ProgressCircleView.swift in Sources */,
 				305E817E2C23020D00B7FE37 /* NewPlayerView.swift in Sources */,
+				3096ED5E2C2751C900EEEF75 /* StageView.swift in Sources */,
 				305E814D2C221C9C00B7FE37 /* AppDelegate.swift in Sources */,
 				305E814F2C221C9C00B7FE37 /* SceneDelegate.swift in Sources */,
 				305E817A2C22BD1000B7FE37 /* PlayerCellView.swift in Sources */,
@@ -279,17 +292,20 @@
 				305E816F2C22B28400B7FE37 /* ProSoccer.xcdatamodeld in Sources */,
 				305E81622C221D1200B7FE37 /* FootballTrainingsView.swift in Sources */,
 				305E817C2C22FFB500B7FE37 /* CircleButtonView.swift in Sources */,
+				3096ED622C276F3600EEEF75 /* Stage3CellView.swift in Sources */,
 				30173A932C246715005C388F /* NewTrainingView.swift in Sources */,
 				30173A842C2309B0005C388F /* AddButtonView.swift in Sources */,
 				305E81822C2304FF00B7FE37 /* PhotoPicker.swift in Sources */,
 				30173A952C24B875005C388F /* TextFieldGroupView.swift in Sources */,
 				30173A8A2C2438B5005C388F /* TrainingsViewModel.swift in Sources */,
+				3096ED5C2C273E9400EEEF75 /* TitleTextField.swift in Sources */,
 				30173A8F2C246365005C388F /* TrainingCellView.swift in Sources */,
 				305E81782C22B61500B7FE37 /* PlayerViewModel.swift in Sources */,
 				305E81752C22B4B700B7FE37 /* Players.swift in Sources */,
 				305E81802C2304FA00B7FE37 /* NoPhotoView.swift in Sources */,
 				305E81732C22B3EF00B7FE37 /* UIImageTransformer.swift in Sources */,
 				30173A882C235C67005C388F /* PlayerInfoView.swift in Sources */,
+				3096ED602C276EC500EEEF75 /* Stage2CellView.swift in Sources */,
 				30173A912C24640A005C388F /* DateTrainingView.swift in Sources */,
 				30173A862C235401005C388F /* playerListView.swift in Sources */,
 				305E81842C23060100B7FE37 /* CustomTextFieldView.swift in Sources */,

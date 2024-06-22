@@ -46,8 +46,7 @@ struct NewPlayerView: View {
                     Spacer()
                     
                     //MARK: - Name player
-                    TextField("Name", text: $vm.simpleName)
-                        .foregroundStyle(.white)
+                    TitleTextField(placeholder: "Name player..", text: $vm.simpleName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 20, weight: .heavy))
                     

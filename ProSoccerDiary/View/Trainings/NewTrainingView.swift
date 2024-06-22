@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewTrainingView: View {
     @StateObject var vm: TrainingsViewModel
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
             Color.mainApp.ignoresSafeArea()
@@ -17,7 +18,7 @@ struct NewTrainingView: View {
                 HStack {
                     
                     //MARK: - Back buttom
-                    Button(action: {}, label: {
+                    Button(action: {dismiss()}, label: {
                         ZStack {
                             Circle().foregroundStyle(.blueApp)
                             Image(systemName: "chevron.left")
@@ -30,8 +31,7 @@ struct NewTrainingView: View {
                     Spacer()
                     
                     //MARK: - Name training
-                    TextField("Name", text: $vm.simpleTitleTraining)
-                        .foregroundStyle(.white)
+                    TitleTextField(placeholder: "Name training...", text: $vm.simpleTitleTraining)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 20, weight: .heavy))
                     
@@ -81,7 +81,11 @@ struct NewTrainingView: View {
                 Spacer()
                 
                 //MARK: - Add button
-                Button(action: {}, label: {
+                Button(action: {
+                    vm.addTraining()
+                    vm.addAllTask()
+                    dismiss()
+                }, label: {
                     AddButtonView()
                 })
             }.padding()

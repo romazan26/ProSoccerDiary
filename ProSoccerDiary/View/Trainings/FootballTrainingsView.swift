@@ -32,15 +32,39 @@ struct FootballTrainingsView: View {
 
                     }
                     //MARK: - Favorites training
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Favorites")
                             .foregroundStyle(.gray)
+                        if !vm.favoriteTrainings.isEmpty{
+                            ScrollView{
+                                ForEach(vm.trainings) { training in
+                                    NavigationLink {
+                                        StageView(training: training, vm: vm)
+                                    } label: {
+                                        TrainingCellView(training: training)
+                                    }
+                                }
+                            }
+                        }
                     }
                     
                     //MARK: - All training
                     Text("All")
                         .foregroundStyle(.gray)
+                    if !vm.allTrainings.isEmpty{
+                        ScrollView{
+                            ForEach(vm.trainings) { training in
+                                NavigationLink {
+                                    StageView(training: training, vm: vm)
+                                } label: {
+                                    TrainingCellView(training: training)
+                                }
+                            }
+                        }
+                    }
                     Spacer()
+                    
+                    //Bottom toolbar
                     HStack{
                         //MARK: - PlayersView
                         NavigationLink {
@@ -61,6 +85,9 @@ struct FootballTrainingsView: View {
                 }.padding()
             }
         }
+        .onAppear(perform: {
+            vm.sortTrainings()
+        })
     }
 }
 
