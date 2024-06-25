@@ -28,43 +28,51 @@ struct StageView: View {
                             .foregroundStyle(.white)
                     }).frame(width: 24, height: 24)
                     //MARK: - Title View
-                    Text("Football trainings")
+                    Text(training.title ?? "")
                         .foregroundStyle(.white)
                         .font(.system(size: 24, weight: .heavy))
                     Spacer()
                     
                    //MARK: - isFavorite
-                    Image(systemName:"heart.fill").foregroundStyle(.white)
+                    Image(systemName:training.like ? "heart.fill" : "heart").foregroundStyle(.white)
                     
                     Spacer()
                     
                     //MARK: - Date training
-                    DateTrainingView(date: Date.now)
+                    DateTrainingView(date: training.date ?? Date.now)
                     
                 }
-                //MARK: - Stage 1
-                if let stage1 = training.stage1?.allObjects as? [Stage1]{
-                    VStack{
-                        Text("Stage 1")
-                        StageCellView(training: training)
+                ScrollView{
+                    //MARK: - Stage 1
+                    if let stage1 = training.stage1?.allObjects as? [Stage1]{
+                        if !stage1.isEmpty{
+                            VStack(alignment: .leading){
+                                Text("Stage 1").foregroundStyle(.white)
+                                StageCellView(training: training)
+                            }
+                        }
                     }
-                }
-                
-                //MARK: - Stage 2
-                if let stage2 = training.stage2?.allObjects as? [Stage2]{
-                    VStack{
-                        Text("Stage 2")
-                        Stage2CellView(training: training)
+                    
+                    //MARK: - Stage 2
+                    if let stage2 = training.stage2?.allObjects as? [Stage2]{
+                        if !stage2.isEmpty{
+                            VStack(alignment: .leading){
+                                Text("Stage 2").foregroundStyle(.white)
+                                Stage2CellView(training: training)
+                            }
+                        }
                     }
-                }
-                
-                //MARK: - Stage 3
-                if let stage3 = training.stage3?.allObjects as? [Stage3]{
-                    VStack{
-                        Text("Stage 3")
-                        Stage2CellView(training: training)
+                    
+                    //MARK: - Stage 3
+                    if let stage3 = training.stage3?.allObjects as? [Stage3]{
+                        if !stage3.isEmpty{
+                            VStack(alignment: .leading){
+                                Text("Stage 3").foregroundStyle(.white)
+                                Stage3CellView(training: training)
+                            }
+                        }
                     }
-                }
+                }.padding(.vertical)
                 Spacer()
                 //Bottom toolbar
                 HStack{

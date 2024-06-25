@@ -27,10 +27,10 @@ struct TextFieldGroupView: View {
                     CustomTextFieldView(placeholder: "", text: $text2)
                 }
                 if tasktextField > 1 {
-                    CustomTextFieldView(placeholder: "", text: $text2)
+                    CustomTextFieldView(placeholder: "", text: $text3)
                 }
                 if tasktextField > 2 {
-                    CustomTextFieldView(placeholder: "", text: $text2)
+                    CustomTextFieldView(placeholder: "", text: $text4)
                 }
                 //MARK: - oneMore Task button
                 if tasktextField < 3{

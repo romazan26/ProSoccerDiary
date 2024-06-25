@@ -44,6 +44,36 @@ final class TrainingsViewModel: ObservableObject{
         getStage3()
     }
     
+    //MARK: - Clear simole data
+    func clear(){
+        simpleTitleTraining = ""
+        simpleTask1Name1 = ""
+        simpleTask1Name2 = ""
+        simpleTask1Name3 = ""
+        simpleTask1Name4 = ""
+        simpleTask2Name1 = ""
+        simpleTask2Name2 = ""
+        simpleTask2Name3 = ""
+        simpleTask2Name4 = ""
+        simpleTask3Name1 = ""
+        simpleTask3Name2 = ""
+        simpleTask3Name3 = ""
+        simpleTask3Name4 = ""
+    }
+    
+    //MARK: - isFavorite Training
+    func isFavorite(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Training>(entityName: "Training")
+        do{
+            trainings = try manager.context.fetch(request)
+            guard let training = trainings.first(where: {$0.id == id}) else{return}
+            training.like = true
+        }catch let error {
+            print("Error delete: \(error.localizedDescription)")
+        }
+        save()
+    }
+    
     //MARK: - Sorting trainings
     func sortTrainings(){
         favoriteTrainings.removeAll()
@@ -57,12 +87,26 @@ final class TrainingsViewModel: ObservableObject{
         }
     }
     
+    //MARK: - Delete
+    func deleteTraining(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Training>(entityName: "Training")
+        do{
+            trainings = try manager.context.fetch(request)
+            guard let training = trainings.first(where: {$0.id == id}) else{return}
+            manager.context.delete(training)
+        }catch let error {
+            print("Error delete: \(error.localizedDescription)")
+        }
+        save()
+    }
+    
     //MARK: - Add data
     func addTraining(){
         let newTrainig = Training(context: manager.context)
         newTrainig.title = simpleTitleTraining
         newTrainig.date = Date.now
         newTrainig.like = false
+        save()
         
     }
     func addAllTask(){
@@ -150,10 +194,10 @@ final class TrainingsViewModel: ObservableObject{
     
     //MARK: - Save data
     func save(){
-        trainings.removeAll()
-        stage1.removeAll()
-        stage2.removeAll()
-        stage3.removeAll()
+//        trainings.removeAll()
+//        stage1.removeAll()
+//        stage2.removeAll()
+//        stage3.removeAll()
         manager.save()
         getTraining()
         getStage1()

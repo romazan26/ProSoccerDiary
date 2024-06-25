@@ -24,41 +24,48 @@ struct FootballTrainingsView: View {
                         Spacer()
                         //MARK: - Settings button
                         NavigationLink {
-                            
+                            SettingsView()
                         } label: {
                             Image(systemName: "gearshape.fill")
                                 .foregroundStyle(.gray)
                         }
 
                     }
-                    //MARK: - Favorites training
-                    VStack(alignment: .leading) {
-                        Text("Favorites")
-                            .foregroundStyle(.gray)
-                        if !vm.favoriteTrainings.isEmpty{
-                            ScrollView{
-                                ForEach(vm.trainings) { training in
+                    ScrollView{
+                        //MARK: - Favorites training
+                        VStack(alignment: .leading) {
+                            Text("Favorites")
+                                .foregroundStyle(.gray)
+                            if !vm.favoriteTrainings.isEmpty{
+                                
+                                ForEach(vm.favoriteTrainings) { training in
                                     NavigationLink {
                                         StageView(training: training, vm: vm)
                                     } label: {
-                                        TrainingCellView(training: training)
+                                        TrainingCellView(vm: vm, training: training)
                                     }
                                 }
+                                
                             }
                         }
-                    }
-                    
-                    //MARK: - All training
-                    Text("All")
-                        .foregroundStyle(.gray)
-                    if !vm.allTrainings.isEmpty{
-                        ScrollView{
-                            ForEach(vm.trainings) { training in
-                                NavigationLink {
-                                    StageView(training: training, vm: vm)
-                                } label: {
-                                    TrainingCellView(training: training)
+                        
+                        //MARK: - All training
+                        VStack(alignment: .leading) {
+                            Text("All")
+                                .foregroundStyle(.gray)
+                            if !vm.allTrainings.isEmpty{
+                                
+                                ForEach(vm.allTrainings) { training in
+                                    NavigationLink {
+                                        StageView(training: training, vm: vm)
+                                    } label: {
+                                        TrainingCellView(vm: vm, training: training)
+                                        //                                        .onLongPressGesture {
+                                        //                                            vm.deleteTraining(with: training.id)
+                                        //                                        }
+                                    }
                                 }
+                                
                             }
                         }
                     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TrainingCellView: View {
+    @StateObject var vm: TrainingsViewModel
     let training: Training
     var body: some View {
         ZStack {
@@ -19,7 +20,10 @@ struct TrainingCellView: View {
                 Spacer()
                 
                 //MARK: - isFavorite Training
-                Button(action: {}, label: {
+                Button(action: {
+                    vm.isFavorite(with: training.id)
+                    vm.sortTrainings()
+                }, label: {
                     Image(systemName: training.like ? "heart.fill" : "heart")
                 })
                 
@@ -29,7 +33,7 @@ struct TrainingCellView: View {
             .padding()
             .foregroundStyle(.white)
         }
-        .frame(width: .infinity, height: 67)
+        .frame(width: 356, height: 67)
         .cornerRadius(10)
     }
 }

@@ -84,6 +84,7 @@ struct NewTrainingView: View {
                 Button(action: {
                     vm.addTraining()
                     vm.addAllTask()
+                    vm.clear()
                     dismiss()
                 }, label: {
                     AddButtonView()

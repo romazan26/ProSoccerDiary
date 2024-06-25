@@ -41,6 +41,10 @@
 		3096ED5E2C2751C900EEEF75 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED5D2C2751C900EEEF75 /* StageView.swift */; };
 		3096ED602C276EC500EEEF75 /* Stage2CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED5F2C276EC500EEEF75 /* Stage2CellView.swift */; };
 		3096ED622C276F3600EEEF75 /* Stage3CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096ED612C276F3600EEEF75 /* Stage3CellView.swift */; };
+		309AD9FF2C2B05A40078C621 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309AD9FE2C2B05A40078C621 /* SettingsView.swift */; };
+		309ADA012C2B06530078C621 /* SettingButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309ADA002C2B06530078C621 /* SettingButtonsView.swift */; };
+		309ADA052C2B09C80078C621 /* webView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309ADA022C2B09C80078C621 /* webView.swift */; };
+		309ADA062C2B09C80078C621 /* WebViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309ADA032C2B09C80078C621 /* WebViewPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		3096ED5D2C2751C900EEEF75 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		3096ED5F2C276EC500EEEF75 /* Stage2CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2CellView.swift; sourceTree = "<group>"; };
 		3096ED612C276F3600EEEF75 /* Stage3CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3CellView.swift; sourceTree = "<group>"; };
+		309AD9FE2C2B05A40078C621 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		309ADA002C2B06530078C621 /* SettingButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonsView.swift; sourceTree = "<group>"; };
+		309ADA022C2B09C80078C621 /* webView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webView.swift; sourceTree = "<group>"; };
+		309ADA032C2B09C80078C621 /* WebViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		305E814B2C221C9C00B7FE37 /* ProSoccerDiary */ = {
 			isa = PBXGroup;
 			children = (
+				309ADA042C2B09C80078C621 /* WebView */,
 				30173A8B2C246094005C388F /* Cell */,
 				305E81762C22B60100B7FE37 /* ViewModels */,
 				305E816C2C22B24200B7FE37 /* CoreData */,
@@ -148,6 +157,7 @@
 				305E81692C22AE6C00B7FE37 /* Trainings */,
 				305E81682C22AE3E00B7FE37 /* Players */,
 				305E81632C221DCF00B7FE37 /* LoadingView.swift */,
+				309AD9FE2C2B05A40078C621 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 				30173A832C2309B0005C388F /* AddButtonView.swift */,
 				30173A902C24640A005C388F /* DateTrainingView.swift */,
 				3096ED5B2C273E9400EEEF75 /* TitleTextField.swift */,
+				309ADA002C2B06530078C621 /* SettingButtonsView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,6 +216,15 @@
 				30173A892C2438B5005C388F /* TrainingsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		309ADA042C2B09C80078C621 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				309ADA022C2B09C80078C621 /* webView.swift */,
+				309ADA032C2B09C80078C621 /* WebViewPage.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +304,7 @@
 				3096ED5E2C2751C900EEEF75 /* StageView.swift in Sources */,
 				305E814D2C221C9C00B7FE37 /* AppDelegate.swift in Sources */,
 				305E814F2C221C9C00B7FE37 /* SceneDelegate.swift in Sources */,
+				309ADA012C2B06530078C621 /* SettingButtonsView.swift in Sources */,
 				305E817A2C22BD1000B7FE37 /* PlayerCellView.swift in Sources */,
 				305E816B2C22AE9600B7FE37 /* FavoritePlayersView.swift in Sources */,
 				305E81642C221DCF00B7FE37 /* LoadingView.swift in Sources */,
@@ -298,11 +319,14 @@
 				305E81822C2304FF00B7FE37 /* PhotoPicker.swift in Sources */,
 				30173A952C24B875005C388F /* TextFieldGroupView.swift in Sources */,
 				30173A8A2C2438B5005C388F /* TrainingsViewModel.swift in Sources */,
+				309ADA052C2B09C80078C621 /* webView.swift in Sources */,
 				3096ED5C2C273E9400EEEF75 /* TitleTextField.swift in Sources */,
+				309ADA062C2B09C80078C621 /* WebViewPage.swift in Sources */,
 				30173A8F2C246365005C388F /* TrainingCellView.swift in Sources */,
 				305E81782C22B61500B7FE37 /* PlayerViewModel.swift in Sources */,
 				305E81752C22B4B700B7FE37 /* Players.swift in Sources */,
 				305E81802C2304FA00B7FE37 /* NoPhotoView.swift in Sources */,
+				309AD9FF2C2B05A40078C621 /* SettingsView.swift in Sources */,
 				305E81732C22B3EF00B7FE37 /* UIImageTransformer.swift in Sources */,
 				30173A882C235C67005C388F /* PlayerInfoView.swift in Sources */,
 				3096ED602C276EC500EEEF75 /* Stage2CellView.swift in Sources */,
