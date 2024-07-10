@@ -13,6 +13,7 @@ struct NewPlayerView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var isPresented: Bool = false
+    @FocusState private var keyboardIsFocused: Bool
     
     var config: PHPickerConfiguration {
         var config = PHPickerConfiguration(photoLibrary: .shared())
@@ -33,7 +34,10 @@ struct NewPlayerView: View {
                 HStack {
                     
                     //MARK: - Back buttom
-                    Button(action: {dismiss()}, label: {
+                    Button(action: {
+                        dismiss()
+                        vm.clear()
+                    }, label: {
                         ZStack {
                             Circle().foregroundStyle(.blueApp)
                             Image(systemName: "chevron.left")
@@ -49,6 +53,7 @@ struct NewPlayerView: View {
                     TitleTextField(placeholder: "Name player..", text: $vm.simpleName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 20, weight: .heavy))
+                        .focused($keyboardIsFocused)
                     
                     Spacer()
                     
@@ -73,11 +78,14 @@ struct NewPlayerView: View {
                     } else {
                         Image(uiImage: vm.pickerResult.first!)
                             .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 170, height: 215)
                             .cornerRadius(8)
-                            .frame(width: 158, height: 251)
                     }
                     CustomTextFieldView(placeholder: "Age", text: $vm.simpleAge)
-                    CustomTextFieldView(placeholder: "Team now", text: $vm.simpleTeam)
+                        .focused($keyboardIsFocused)
+                        .keyboardType(.numberPad)
+                    CustomTextFieldView(placeholder: "Team now", text: $vm.simpleTeam).focused($keyboardIsFocused)
                 }
                 Spacer()
                 Button {
@@ -88,6 +96,9 @@ struct NewPlayerView: View {
                 }
 
             }
+        }
+        .onTapGesture {
+            keyboardIsFocused = false
         }
         .navigationBarBackButtonHidden(true)
     }

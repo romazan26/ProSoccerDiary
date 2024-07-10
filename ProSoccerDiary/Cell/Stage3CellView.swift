@@ -9,24 +9,29 @@ import SwiftUI
 
 struct Stage3CellView: View {
     let training: Training
+    @StateObject var vm: TrainingsViewModel
     var body: some View {
         ZStack {
             Color.grayApp.ignoresSafeArea()
-            VStack(alignment: .leading) {
-                if let stage3 = training.stage3?.allObjects as? [Stage3]{
-                    ForEach(stage3) { task in
-                    HStack {
-                        Circle()
-                            .foregroundStyle(.blueApp)
-                            .frame(width: 13)
-                        Text(task.titleTask ?? "")
-                            .foregroundStyle(.white)
-                        Spacer()
+            if let stage3 = training.stage3?.allObjects as? [Stage3]{
+                HStack{
+                    VStack(alignment: .leading) {
+                        ForEach(stage3) { task in
+                            HStack {
+                                Circle()
+                                    .foregroundStyle(.blueApp)
+                                    .frame(width: 13)
+                                Text(task.titleTask ?? "")
+                                    .foregroundStyle(.white)
+                                Spacer()
+                            }
+                        }
                     }
-                }
+                    //MARK: - delete Training
+                    Button {vm.deleteStage3(with: training.id)}
+                    label: {Image(systemName: "trash.fill").foregroundStyle(.white)}
+                }.padding()
             }
-                
-            }.padding()
         }
         .frame(width: .infinity, height: 185)
         .cornerRadius(15)
@@ -34,5 +39,5 @@ struct Stage3CellView: View {
 }
 
 #Preview {
-    Stage3CellView(training: Training())
+    Stage3CellView(training: Training(), vm: TrainingsViewModel())
 }

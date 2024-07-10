@@ -67,7 +67,7 @@ final class TrainingsViewModel: ObservableObject{
         do{
             trainings = try manager.context.fetch(request)
             guard let training = trainings.first(where: {$0.id == id}) else{return}
-            training.like = true
+            training.like.toggle()
         }catch let error {
             print("Error delete: \(error.localizedDescription)")
         }
@@ -85,6 +85,7 @@ final class TrainingsViewModel: ObservableObject{
                 allTrainings.append(training)
             }
         }
+        getTraining()
     }
     
     //MARK: - Delete
@@ -94,6 +95,56 @@ final class TrainingsViewModel: ObservableObject{
             trainings = try manager.context.fetch(request)
             guard let training = trainings.first(where: {$0.id == id}) else{return}
             manager.context.delete(training)
+        }catch let error {
+            print("Error delete: \(error.localizedDescription)")
+        }
+        save()
+    }
+    
+    func deleteStage(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Training>(entityName: "Training")
+        do{
+            trainings = try manager.context.fetch(request)
+            guard let training = trainings.first(where: {$0.id == id}) else{return}
+            getStage1()
+            for stage in stage1 {
+                if stage.trainig == training {
+                    manager.context.delete(stage)
+                }
+            }
+                     
+            
+           
+        }catch let error {
+            print("Error delete: \(error.localizedDescription)")
+        }
+        save()
+    }
+    
+    func deleteStage2(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Training>(entityName: "Training")
+        do{
+            trainings = try manager.context.fetch(request)
+            guard let training = trainings.first(where: {$0.id == id}) else{return}
+            getStage2()
+            for stage in stage2 {
+                if stage.trainig == training {manager.context.delete(stage)}
+            }
+        }catch let error {
+            print("Error delete: \(error.localizedDescription)")
+        }
+        save()
+    }
+    
+    func deleteStage3(with id: ObjectIdentifier){
+        let request = NSFetchRequest<Training>(entityName: "Training")
+        do{
+            trainings = try manager.context.fetch(request)
+            guard let training = trainings.first(where: {$0.id == id}) else{return}
+            getStage3()
+            for stage in stage3 {
+                if stage.trainig == training {manager.context.delete(stage)}
+            }
         }catch let error {
             print("Error delete: \(error.localizedDescription)")
         }

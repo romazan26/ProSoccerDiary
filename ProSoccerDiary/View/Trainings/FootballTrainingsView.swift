@@ -34,8 +34,11 @@ struct FootballTrainingsView: View {
                     ScrollView{
                         //MARK: - Favorites training
                         VStack(alignment: .leading) {
-                            Text("Favorites")
-                                .foregroundStyle(.gray)
+                            HStack {
+                                Text("Favorites")
+                                    .foregroundStyle(.gray)
+                                Spacer()
+                            }
                             if !vm.favoriteTrainings.isEmpty{
                                 
                                 ForEach(vm.favoriteTrainings) { training in
@@ -45,14 +48,16 @@ struct FootballTrainingsView: View {
                                         TrainingCellView(vm: vm, training: training)
                                     }
                                 }
-                                
                             }
                         }
                         
                         //MARK: - All training
                         VStack(alignment: .leading) {
-                            Text("All")
-                                .foregroundStyle(.gray)
+                            HStack {
+                                Text("All")
+                                    .foregroundStyle(.gray)
+                                Spacer()
+                            }
                             if !vm.allTrainings.isEmpty{
                                 
                                 ForEach(vm.allTrainings) { training in
@@ -60,9 +65,6 @@ struct FootballTrainingsView: View {
                                         StageView(training: training, vm: vm)
                                     } label: {
                                         TrainingCellView(vm: vm, training: training)
-                                        //                                        .onLongPressGesture {
-                                        //                                            vm.deleteTraining(with: training.id)
-                                        //                                        }
                                     }
                                 }
                                 
@@ -91,6 +93,7 @@ struct FootballTrainingsView: View {
                     }
                 }.padding()
             }
+            .animation(.bouncy, value: vm.favoriteTrainings)
         }
         .onAppear(perform: {
             vm.sortTrainings()

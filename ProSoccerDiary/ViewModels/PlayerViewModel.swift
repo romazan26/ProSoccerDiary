@@ -24,6 +24,14 @@ final class PlayerViewModel: ObservableObject {
         getPlayers()
     }
     
+    //MARK: - Clear data
+    func clear(){
+        simpleName = ""
+        simpleAge = ""
+        simpleTeam = ""
+        pickerResult.removeAll()
+    }
+    
     //MARK: - Delete
     func deletePlayer(player: Players){
         manager.context.delete(player)
@@ -51,6 +59,7 @@ final class PlayerViewModel: ObservableObject {
             newPlayer.image = pickerResult.first
         }
         save()
+        clear()
     }
     
     //MARK: - Save data

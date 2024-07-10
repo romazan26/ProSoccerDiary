@@ -11,13 +11,13 @@ struct NoPhotoView: View {
     var body: some View {
         ZStack {
             Color.gray
-                .cornerRadius(8)
                 .opacity(0.4)
-                .frame(width: 135, height: 245)
             Image(.noPhoto)
                 .resizable()
                 .frame(width: 26, height:24)
         }
+        .frame(width: 170, height: 215)
+        .cornerRadius(8)
     }
 }
 

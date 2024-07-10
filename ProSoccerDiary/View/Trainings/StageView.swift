@@ -48,7 +48,7 @@ struct StageView: View {
                         if !stage1.isEmpty{
                             VStack(alignment: .leading){
                                 Text("Stage 1").foregroundStyle(.white)
-                                StageCellView(training: training)
+                                StageCellView(training: training, vm: vm)
                             }
                         }
                     }
@@ -58,7 +58,7 @@ struct StageView: View {
                         if !stage2.isEmpty{
                             VStack(alignment: .leading){
                                 Text("Stage 2").foregroundStyle(.white)
-                                Stage2CellView(training: training)
+                                Stage2CellView(training: training, vm: vm)
                             }
                         }
                     }
@@ -68,7 +68,7 @@ struct StageView: View {
                         if !stage3.isEmpty{
                             VStack(alignment: .leading){
                                 Text("Stage 3").foregroundStyle(.white)
-                                Stage3CellView(training: training)
+                                Stage3CellView(training: training, vm: vm)
                             }
                         }
                     }
@@ -94,7 +94,9 @@ struct StageView: View {
                 }
             }
             .padding()
-        }.navigationBarBackButtonHidden(true)
+        }
+        .animation(.bouncy)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

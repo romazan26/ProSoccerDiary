@@ -16,6 +16,9 @@ struct PlayerCellView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
             Image(uiImage: player.image ?? .noPhoto)
                 .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: width, height: height)
+                .cornerRadius(18)
             ZStack {
                 Color.blueApp
                     .frame(width: width, height: height / 3.5)
@@ -25,7 +28,7 @@ struct PlayerCellView: View {
                 Text(player.name ?? "")
                     .padding()
                     .foregroundStyle(.white)
-                .font(.title2)
+                    .font(.system(size: 18, weight: .bold))
             }
         }
         .cornerRadius(18)

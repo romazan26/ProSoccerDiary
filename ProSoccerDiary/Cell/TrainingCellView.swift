@@ -27,6 +27,14 @@ struct TrainingCellView: View {
                     Image(systemName: training.like ? "heart.fill" : "heart")
                 })
                 
+                //MARK: - delete Training
+                Button(action: {
+                    vm.deleteTraining(with: training.id)
+                    vm.sortTrainings()
+                }, label: {
+                    Image(systemName: "trash.fill")
+                })
+                
                 //MARK: - Date training
                 DateTrainingView(date: training.date ?? Date.now)
             }
